@@ -43,9 +43,13 @@
 				createTile: function (coords) {
 							const tile = document.createElement('div');
 							tile.style.outline = '1px solid green';
-							tile.style.fontWeight = 'bold';
-							tile.style.fontSize = '14pt';
-							tile.innerHTML = [coords.z, coords.x, (2 ** coords.z - coords.y)-1].join('/');
+							//tile.style.fontWeight = 'bold';
+							tile.style.fontSize = '10pt';
+							tile.innerHTML = [
+                            (coords.x/Math.pow(2,coords.z)*360-180).toFixed(6) + ' ' +
+                            (180/Math.PI*Math.atan(0.5*(Math.exp(Math.PI-2*Math.PI*coords.y/Math.pow(2,coords.z))-Math.exp(-(Math.PI-2*Math.PI*coords.y/Math.pow(2,coords.z)))))).toFixed(6),
+							coords.z + '/'+ coords.x + '/' + ((2 ** coords.z - coords.y)-1),
+							].join('<br /><br />');
 								return tile;
 				},
 		});
@@ -55,8 +59,6 @@
 		};
 
         var grid = L.gridLayer.gridDebug();
-
-        //map.addLayer(L.gridLayer.gridDebug());
 
         // Base layers
         //  .. OpenStreetMap
@@ -77,8 +79,10 @@
 			tms: true, 
 			opacity: 1.0, 
 			attribution: "",
-			minZoom: 8,
-			maxNativeZoom: 16
+			minZoom: 10,
+			maxNativeZoom: 16,
+			bounds: L.latLngBounds([[50.51253, -2.460937],[52.160455, -2.109375]])
+			
 		});
         // Map
         var map = L.map('map', {
