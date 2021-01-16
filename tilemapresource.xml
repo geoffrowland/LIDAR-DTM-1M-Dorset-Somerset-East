@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
     <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
-      <Title>Clip_Tyneham_2_hill_rend.tif</Title>
+      <Title>glou_hill_rend.tif</Title>
       <Abstract></Abstract>
       <SRS>EPSG:3857</SRS>
-      <BoundingBox minx="-2.19933012577800" miny="50.61952253832570" maxx="-2.17098651865116" maxy="50.63755606361411"/>
-      <Origin x="-2.19933012577800" y="50.61952253832570"/>
+      <BoundingBox minx="-2.36312470462149" miny="51.47340273425191" maxx="-2.00138940631498" maxy="51.69874577572995"/>
+      <Origin x="-2.36312470462149" y="51.47340273425191"/>
       <TileFormat width="256" height="256" mime-type="image/png" extension="png"/>
       <TileSets profile="mercator">
+        <TileSet href="9" units-per-pixel="305.74811308593752" order="9"/>
         <TileSet href="10" units-per-pixel="152.87405654296876" order="10"/>
         <TileSet href="11" units-per-pixel="76.43702827148438" order="11"/>
         <TileSet href="12" units-per-pixel="38.21851413574219" order="12"/>
